@@ -4,6 +4,9 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import reduxThunk from 'redux-thunk'
 
+import { MuiThemeProvider } from 'material-ui/styles';
+import theme from './css/theme';
+import './index.css';
 
 import App from './components/App'
 import reducers from './reducers'
@@ -14,7 +17,9 @@ const store = createStore(reducers, {}, applyMiddleware(reduxThunk))
 
 render(
 	<Provider store={store} >
-        <App />
+		<MuiThemeProvider theme={theme}>
+			<App />
+		</MuiThemeProvider>
     </Provider>,
 	document.getElementById("root")
 )
