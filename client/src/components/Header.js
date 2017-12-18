@@ -46,7 +46,7 @@ class Header extends React.Component {
 	        	</Tabs>
 				<AuthDialog
 					open={this.state.authDialog}
-					onClose={() => this.handleAuthDialog.bind(this)}
+					onClose={this.handleAuthDialog.bind(this)}
 				/>
 			</div>
 
