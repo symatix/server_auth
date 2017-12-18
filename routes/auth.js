@@ -12,7 +12,7 @@ module.exports = (app) => {
 		'/auth/facebook/callback',
 		passport.authenticate('facebook'),
 		(req, res) => {
-			res.redirect('/signout')
+			res.redirect('/')
 		}
 	);
 	// google oauth
@@ -23,7 +23,7 @@ module.exports = (app) => {
 		'/auth/google/callback',
 		passport.authenticate('google'),
 		(req, res) => {
-			res.redirect('/signout')
+			res.redirect('/')
 		}
 	);
 
