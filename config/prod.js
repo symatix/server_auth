@@ -7,5 +7,7 @@ module.exports = {
 	twitterConsumerKey: process.env.TWITTER_CONSUMER_KEY,
 	twitterConsumerSecret: process.env.TWITTER_CONSUMER_SECRET,
 	cookieKeyOne: process.env.COOKIE_KEY_ONE,
-	cookieKeyTwo: process.env.COOKIE_KEY_TWO
+	cookieKeyTwo: process.env.COOKIE_KEY_TWO,
+	gmailU: process.env.GMAIL_USER,
+	gmailP: process.env.GMAIL_PASSWORD
 }
