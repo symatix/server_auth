@@ -26,6 +26,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./routes/auth')(app);
+require('./routes/mail')(app);
 
 if (process.env.NODE_ENV === 'production') {
 	//serve production assets if requested

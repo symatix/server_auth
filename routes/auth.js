@@ -27,12 +27,13 @@ module.exports = (app) => {
 		}
 	);
 
-	// general server API
+	// sign out user
 	app.get('/api/signout', (req, res) => {
 		req.logout();
 		res.redirect('/');
 	});
 
+	// used for user status check on main component render
 	app.get('/api/current_user', (req, res) => {
 		res.send(req.user)
 	});

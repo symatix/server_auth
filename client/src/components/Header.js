@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Tabs, { Tab } from 'material-ui/Tabs';
+import AppBar from 'material-ui/AppBar';
 import AuthDialog from './auth/auth_dialog';
 import { signOut } from '../actions';
 
@@ -30,20 +31,22 @@ class Header extends React.Component {
 	render() {
 		return (
 			<div>
+			<AppBar position="fixed">
 				<Tabs
 					value={this.state.value}
 					onChange={this.handleChange}
-					indicatorColor="primary"
-					textColor="primary"
-					centered>
-					<Tab label="Constelations" />
-					<Tab label="Family" />
-					<Tab label="Business" />
-					<Tab label="About Us" />
-					<Tab label="Contact" />
-					<Tab label="Calendar" />
+					indicatorColor="#ffffff"
+					centered
+					>
+					<Tab label="Constelations" onClick={()=> this.props.history.push('/')}/>
+					<Tab label="Family" onClick={()=> this.props.history.push('/family')}/>
+					<Tab label="Business" onClick={()=> this.props.history.push('/business')}/>
+					<Tab label="About Us" onClick={()=> this.props.history.push('/about')}/>
+					<Tab label="Contact" onClick={()=> this.props.history.push('/contact')}/>
+					<Tab label="Calendar" onClick={()=> this.props.history.push('/calendar')} />
 					{this.renderAuth()}
-	        	</Tabs>
+				</Tabs>
+			</AppBar>
 				<AuthDialog
 					open={this.state.authDialog}
 					onClose={this.handleAuthDialog.bind(this)}
