@@ -1,9 +1,6 @@
 const passport = require('passport');
 
 module.exports = (app) => {
-	app.get('/', (req, res) => {
-		res.send('Thou shan\'t disturb The All Mighty Server.')
-	});
 	// facebook oauth
 	app.get('/auth/facebook', passport.authenticate('facebook', {
 		scope: ['email']
